@@ -12,7 +12,7 @@ class CityListTest {
     }
 
     private City mockCity() {
-        return new City("Dhaka", "Rajshahi");
+        return new City("Dhaka", "lalbag");
     }
 
     @Test
@@ -21,7 +21,7 @@ class CityListTest {
 
         assertEquals(1, cityList.getCities().size());
 
-        City city = new City("NY", "AZ");
+        City city = new City("NY", "street1");
         cityList.add(city);
 
         assertEquals(2, cityList.getCities().size());
@@ -32,7 +32,7 @@ class CityListTest {
     void testAddException() {
         CityList cityList = mockCityList();
 
-        City city = new City("Khulna", "Sylhet");
+        City city = new City("Khulna", "daulatpur");
         cityList.add(city);
 
         assertThrows(IllegalArgumentException.class, () -> {
@@ -45,7 +45,7 @@ class CityListTest {
         CityList cityList = mockCityList();
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(0)));
 
-        City city = new City("Barisal", "Rangpur");
+        City city = new City("Barisal", "test");
         cityList.add(city);
 
         assertEquals(0, city.compareTo(cityList.getCities().get(0)));
@@ -56,8 +56,8 @@ class CityListTest {
     @Test
     void testDeleteCity(){
         CityList cityList = new CityList();
-        City city1 = new City("Sathkhira", "Khulna");
-        City city2 = new City("Bogura", "Rajshahi");
+        City city1 = new City("Sathkhira", "test2");
+        City city2 = new City("Bogura", "gabtoli");
         cityList.add(city1);
         cityList.add(city2);
 
@@ -69,7 +69,7 @@ class CityListTest {
     @Test
     void CountCities(){
         CityList _cityList = mockCityList();
-        City city1 = new City("Sathkhira", "Khulna");
+        City city1 = new City("Sathkhira", "test6");
         _cityList.add(city1);
 
         assertEquals(2,_cityList.countCities());
